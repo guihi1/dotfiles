@@ -1,0 +1,81 @@
+# Don't print a new line at the start of the prompt
+add_newline = false
+
+# Use custom format
+format = """
+[╭─](white)$username$hostname in $directory$c$nodejs$java$python$git_branch$cmd_duration
+[╰─](white)$character """
+
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 10
+
+# Username settings
+[username]
+show_always = true
+style_root = "bold red"
+style_user = "bold yellow"
+format = "[$user]($style)"
+disabled = false
+
+# Hostname settings
+[hostname]
+ssh_only = false
+format =  "@[$hostname](bold red)"
+trim_at = ".companyname.com"
+disabled = false
+
+# Directory indicator
+[directory]
+read_only = "🔒"
+style = "bold cyan"
+read_only_style = "red"
+truncation_length = 8
+truncation_symbol = "…/"
+format = "[$read_only]($read_only_style)[$path]($style) "
+disabled = false
+
+# Package Version Config
+#[package]
+#format = "via [🎁 $version](208 bold) "
+
+[nodejs]
+symbol = " "
+style = "#f7df1e"
+format = " [${symbol}($version)]($style) "
+
+# Java settings
+[java]
+symbol = " "
+style = "red dimmed"
+format = ' [${symbol}${version}]($style) '
+
+# Python settings
+[python]
+symbol = " "
+style = "yellow bold"
+python_binary = "python3"
+pyenv_version_name = true
+
+[c]
+symbol = " "
+style = "bg:color_blue"
+format = " [${symbol}($version)]($style) "
+
+# git settings
+[git_branch]
+truncation_length = 4
+truncation_symbol = ""
+
+# cmd_duration config
+[cmd_duration]
+show_milliseconds = true
+style = "bold yellow"
+format = "took [$duration]($style)"
+
+# Character config
+[character]
+format = "$symbol"
+success_symbol = "[❯](bold green)"
+error_symbol = "[✗](bold red) "
+vicmd_symbol = "[❮](bold green)"
+disabled = false
