@@ -36,7 +36,7 @@ config.window_padding = {
   bottom = '0',
 }
 
-config.default_prog = { "/bin/bash" }
+config.default_prog = { "/bin/zsh" }
 
 -- and finally, return the configuration to wezterm
 return config
